@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+	function updateAppVersion() {
+		document.getElementById('app-version').innerHTML = medicmobile_android.getAppVersion();
+	}
+</script>
+<div id="content">
+	<h1>Container version: <span id="app-version"></span></h1>
+</div>
+<script>
+	updateAppVersion();
+</script>
+</body>
+</html>
