@@ -12,12 +12,21 @@
 </div>
 
 <div>
-	<h3>Date input</h3>
-	<input type="date" id="date-input"/>
+	<h3>Normal date input</h3>
+	<input type="date" id="normal-date-input"/>
+</div>
+<div>
+	<h3>Hacky date input</h3>
+	<input type="date" id="hacky-date-input"/>
 </div>
 
 <script>
 	updateAppVersion();
+	document.getElementById('hacky-date-input').addEventListener('click', function(e) {
+		var i = e.target;
+		i.setAttribute('type', 'text');
+		i.setAttribute('type', 'date');
+	});
 </script>
 </body>
 </html>
