@@ -4,7 +4,8 @@
 <body>
 <script>
 	function updateAppVersion() {
-		document.getElementById('app-version').innerHTML = medicmobile_android.getAppVersion();
+		if(!window.medicmobile_android) return;
+		document.getElementById('app-version').innerHTML = window.medicmobile_android.getAppVersion();
 	}
 </script>
 <div id="content">
@@ -27,6 +28,13 @@
 	});
 	document.getElementById('hacky-date-input').addEventListener('click', function(e) {
 		console.log('[click] hacky-date-input');
+		var i = e.target;
+		setTimeout(function() {
+			i.dispatchEvent(new Event('reup'));
+		});
+	});
+	document.getElementById('hacky-date-input').addEventListener('reup', function(e) {
+		console.log('[reup] hacky-date-input');
 		var i = e.target;
 		i.setAttribute('type', 'text');
 		i.setAttribute('type', 'date');
