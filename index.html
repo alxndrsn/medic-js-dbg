@@ -29,6 +29,7 @@
 	document.getElementById('hacky-date-input').addEventListener('click', function(e) {
 		console.log('[click] hacky-date-input');
 		var i = e.target;
+		i.parentNode.setAttribute('style', 'display: none;');
 		setTimeout(function() {
 			i.dispatchEvent(new Event('reup'));
 		});
@@ -36,8 +37,7 @@
 	document.getElementById('hacky-date-input').addEventListener('reup', function(e) {
 		console.log('[reup] hacky-date-input');
 		var i = e.target;
-		i.setAttribute('type', 'text');
-		i.setAttribute('type', 'date');
+		i.parentNode.setAttribute('style', '');
 	});
 </script>
 </body>
