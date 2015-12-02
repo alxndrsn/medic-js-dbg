@@ -41,7 +41,9 @@
 		console.log('[reup] hacky-date-input');
 		var i = e.target;
 		i.parentNode.setAttribute('style', 'display: none;');
-		i.parentNode.setAttribute('style', '');
+		setTimeout(function() {
+			i.parentNode.setAttribute('style', '');
+		});
 	});
 </script>
 </body>
