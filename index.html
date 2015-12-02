@@ -7,6 +7,10 @@
 		if(!window.medicmobile_android) return;
 		document.getElementById('app-version').innerHTML = window.medicmobile_android.getAppVersion();
 	}
+	function updateLocation() {
+		if(!window.medicmobile_android) return;
+		document.getElementById('location').innerHTML = window.medicmobile_android.getLocation();
+	}
 </script>
 <div id="content">
 	<h1>Container version: <span id="app-version"></span></h1>
@@ -14,6 +18,12 @@
 
 <div id="controls">
 	<button onclick="window.location.reload(true)">RELOAD</button>
+</div>
+
+<div>
+	<h3>Location</h3>
+	<pre id="location"></pre>
+	<button onclick="updateLocation()">update</button>
 </div>
 
 <div>
