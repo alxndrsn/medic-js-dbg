@@ -22,7 +22,11 @@
 
 <script>
 	updateAppVersion();
+	document.getElementById('normal-date-input').addEventListener('click', function(e) {
+		console.log('[click] normal-date-input');
+	});
 	document.getElementById('hacky-date-input').addEventListener('click', function(e) {
+		console.log('[click] hacky-date-input');
 		var i = e.target;
 		i.setAttribute('type', 'text');
 		i.setAttribute('type', 'date');
