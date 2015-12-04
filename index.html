@@ -11,6 +11,10 @@
 		if(!window.medicmobile_android) return;
 		document.getElementById('location').innerHTML = window.medicmobile_android.getLocation();
 	}
+	function refreshHackyDateInput() {
+		document.getElementById('hacky-date-input').setAttribute('type', 'text');
+		document.getElementById('hacky-date-input').setAttribute('type', 'date');
+	}
 </script>
 <div id="content">
 	<h1>Container version: <span id="app-version"></span></h1>
@@ -33,6 +37,7 @@
 <div>
 	<h3>Hacky date input</h3>
 	<input type="date" id="hacky-date-input"/>
+	<button onclick="refreshHackyDateInput()">refresh</button>
 </div>
 
 <script>
@@ -42,18 +47,6 @@
 	});
 	document.getElementById('hacky-date-input').addEventListener('click', function(e) {
 		console.log('[click] hacky-date-input');
-		var i = e.target;
-		setTimeout(function() {
-			i.dispatchEvent(new Event('reup'));
-		}, 50);
-	});
-	document.getElementById('hacky-date-input').addEventListener('reup', function(e) {
-		console.log('[reup] hacky-date-input');
-		var i = e.target;
-		i.parentNode.setAttribute('style', 'display: none;');
-		setTimeout(function() {
-			i.parentNode.setAttribute('style', '');
-		});
 	});
 </script>
 </body>
