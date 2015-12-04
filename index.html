@@ -15,6 +15,10 @@
 		document.getElementById('hacky-date-input').setAttribute('type', 'text');
 		document.getElementById('hacky-date-input').setAttribute('type', 'date');
 	}
+	function showAndroidDatepicker() {
+		if(!window.medicmobile_android) return;
+		window.medicmobile_android.datePicker();
+	}
 </script>
 <div id="content">
 	<h1>Container version: <span id="app-version"></span></h1>
@@ -39,6 +43,10 @@
 	<input type="date" id="hacky-date-input"/>
 	<button onclick="refreshHackyDateInput()">refresh</button>
 </div>
+<div>
+	<h3>Android native datepicker</h3>
+	<input type="text" id="android-datepicker-value" disabled/>
+	<button onclick="showAndroidDatepicker()">show</button>
 
 <script>
 	updateAppVersion();
