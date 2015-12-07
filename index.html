@@ -16,9 +16,13 @@
 		document.getElementById('hacky-date-input').setAttribute('type', 'text');
 		document.getElementById('hacky-date-input').setAttribute('type', 'date');
 	}
-	function showAndroidDatepicker() {
+	function showAndroidDatepicker(initialDate) {
 		if(!window.medicmobile_android) return;
-		window.medicmobile_android.datePicker('#android-datepicker-value');
+		if(initialDate) {
+			window.medicmobile_android.datePicker('#android-datepicker-value', initialDate);
+		} else {
+			window.medicmobile_android.datePicker('#android-datepicker-value');
+		}
 	}
 </script>
 <div id="content">
@@ -48,6 +52,7 @@
 	<h3>Android native datepicker</h3>
 	<input type="text" id="android-datepicker-value" disabled/>
 	<button onclick="showAndroidDatepicker()">show</button>
+	<button onclick="showAndroidDatepicker('1969-02-28')">show (28 Feb 1969)</button>
 
 <script>
 	updateAppVersion();
